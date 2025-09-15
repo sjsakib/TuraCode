@@ -4,9 +4,9 @@ ata hola y = "100"
 dakao(x)
 
 godi x > 10 {
-    dakao("boro")
+    dakao("bara asa")
 } na holae {
-    dakao("coto")
+    dakao("basi coto")
 }
 
 calay gao ata hola i = 0; i < 100; i = i + 1 {
