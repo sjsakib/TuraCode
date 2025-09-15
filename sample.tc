@@ -1,0 +1,14 @@
+ata hola x = 10
+ata hola y = "100"
+
+dakao(x)
+
+godi x > 10 {
+    dakao("boro")
+} na holae {
+    dakao("coto")
+}
+
+calay gao ata hola i = 0; i < 100; i = i + 1 {
+    dakao(i)
+}
