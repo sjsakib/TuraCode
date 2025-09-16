@@ -64,7 +64,10 @@ var grammar = {
     {"name": "Block$ebnf$1", "symbols": ["Block$ebnf$1", "Statement"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "Block", "symbols": [(lexer.has("lbrace") ? {type: "lbrace"} : lbrace), "_", "Block$ebnf$1", "_", (lexer.has("rbrace") ? {type: "rbrace"} : rbrace)], "postprocess": d => d[2]},
     {"name": "_$ebnf$1", "symbols": []},
-    {"name": "_$ebnf$1", "symbols": ["_$ebnf$1", (lexer.has("WS") ? {type: "WS"} : WS)], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "_$ebnf$1$subexpression$1", "symbols": [(lexer.has("WS") ? {type: "WS"} : WS)]},
+    {"name": "_$ebnf$1$subexpression$1", "symbols": [(lexer.has("comment") ? {type: "comment"} : comment)]},
+    {"name": "_$ebnf$1$subexpression$1", "symbols": [(lexer.has("mcomment") ? {type: "mcomment"} : mcomment)]},
+    {"name": "_$ebnf$1", "symbols": ["_$ebnf$1", "_$ebnf$1$subexpression$1"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "_", "symbols": ["_$ebnf$1"], "postprocess": () => null}
 ]
   , ParserStart: "Program"

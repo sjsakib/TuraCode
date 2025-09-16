@@ -91,4 +91,4 @@ Block
   -> %lbrace _ Statement:* _ %rbrace
      {% d => d[2] %}
 
-_ -> %WS:* {% () => null %}
+_ -> (%WS | %comment | %mcomment):* {% () => null %}

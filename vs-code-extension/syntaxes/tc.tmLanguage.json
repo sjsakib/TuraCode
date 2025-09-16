@@ -2,6 +2,7 @@
   "scopeName": "source.tc",
   "name": "TuraCode",
   "patterns": [
+    { "include": "#comments" },
     { "include": "#keywords" },
     { "include": "#strings" },
     { "include": "#numbers" },
@@ -9,6 +10,25 @@
     { "include": "#identifiers" }
   ],
   "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.tc",
+          "begin": "//",
+          "beginCaptures": { "0": { "name": "punctuation.definition.comment.tc" } },
+          "end": "$\\n?",
+          "patterns": []
+        },
+        {
+          "name": "comment.block.tc",
+          "begin": "/\\*",
+          "beginCaptures": { "0": { "name": "punctuation.definition.comment.begin.tc" } },
+          "end": "\\*/",
+          "endCaptures": { "0": { "name": "punctuation.definition.comment.end.tc" } },
+          "patterns": []
+        }
+      ]
+    },
     "keywords": {
       "patterns": [
         {

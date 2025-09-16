@@ -1,7 +1,7 @@
 ata hola x = 10
 ata hola y = "100"
 
-dakao(x)
+// dakao(x)
 
 godi x > 10 {
     dakao("bara asa")
@@ -9,6 +9,8 @@ godi x > 10 {
     dakao("basi coto")
 }
 
-calay gao ata hola i = 0; i < 100; i = i + 1 {
-    dakao(i)
+calay gao ata hola i = 0; i < 100; i++ {
+    x += 10
 }
+
+dakao(x)
