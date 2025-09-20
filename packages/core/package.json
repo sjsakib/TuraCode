@@ -4,5 +4,6 @@
   "type": "module",
   "description": "Core package for TuraCode language processing.",
   "main": "index.js",
+  "types": "types.d.ts",
   "license": "WTFPL"
 }

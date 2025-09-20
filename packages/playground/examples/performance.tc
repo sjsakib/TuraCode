@@ -1,0 +1,27 @@
+// Large nested loop example for performance testing
+let total = 0
+let iterations = 100
+
+// Double loop for more intensive computation
+for (let i = 0; i < iterations; i = i + 1) {
+  for (let j = 0; j < iterations; j = j + 1) {
+    total = total + (i * j)
+    
+    // Add some conditionals for more processing
+    if (i % 2 == 0 && j % 3 == 0) {
+      total = total + 10
+    } else if (i % 5 == 0) {
+      total = total - 5
+    }
+  }
+}
+
+print("Final total after " + (iterations * iterations) + " iterations: " + total)
+
+// Large string manipulation
+let longString = ""
+for (let k = 0; k < 100; k = k + 1) {
+  longString = longString + "This is iteration number " + k + ". "
+}
+
+print("String length: " + longString.length)

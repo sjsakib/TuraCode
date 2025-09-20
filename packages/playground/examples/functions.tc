@@ -1,0 +1,26 @@
+// Function definition and usage
+function factorial(n) {
+  if (n <= 1) {
+    return 1
+  }
+  return n * factorial(n - 1)
+}
+
+let result = factorial(5)
+print("Factorial of 5 is: " + result)
+
+// Function with multiple parameters
+function add(a, b) {
+  return a + b
+}
+
+let sum = add(10, 20)
+print("Sum is: " + sum)
+
+// Nested function calls
+function multiply(a, b) {
+  return a * b
+}
+
+let complexResult = add(multiply(2, 3), multiply(4, 5))
+print("Complex result: " + complexResult)

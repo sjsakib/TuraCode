@@ -1,0 +1,19 @@
+// Basic expressions and variables
+let a = 5
+let b = 10
+let sum = a + b
+print("The sum is: " + sum)
+
+// Basic control flow
+if (sum > 10) {
+  print("Sum is greater than 10")
+} else {
+  print("Sum is not greater than 10")
+}
+
+// Simple loop
+let counter = 0
+while (counter < 5) {
+  print("Counter: " + counter)
+  counter = counter + 1
+}

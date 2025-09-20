@@ -1,5 +1,5 @@
 @{%
-const moo = require("moo");
+import moo from 'moo';
 
 const lexer = moo.compile({
   WS:        { match: /\s+/, lineBreaks: true },

@@ -1,9 +1,13 @@
 import nearley from 'nearley';
-import grammar from './grammar.cjs';
+import * as grammar from './grammar.cjs';
 
 export function parse(input) {
+  let grammarToUse = grammar;
+  if (typeof window !== 'undefined' && window.grammar ) {
+    grammarToUse = window.grammar;
+  }
   try {
-    const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
+    const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammarToUse));
     parser.feed(input);
     parser.finish();
     if (parser.results.length > 1) {

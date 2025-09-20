@@ -1,15 +1,13 @@
+import moo from 'moo';
 // Generated automatically by nearley, version 2.20.1
 // http://github.com/Hardmath123/nearley
 (function () {
 function id(x) { return x[0]; }
 
-const moo = require("moo");
-
 const lexer = moo.compile({
   WS:        { match: /\s+/, lineBreaks: true },
   number:    /[0-9]+/,
   string:    /"(?:\\["\\]|[^\n"\\])*"/,
-  // Comment tokens
   comment:   { match: /\/\/.*?$/, lineBreaks: true },
   mcomment:  { match: /\/\*[^]*?\*\//, lineBreaks: true },
   keyword:   ["ata", "hola", "dakao", "godi", "na", "holae", "calay", "gao"],

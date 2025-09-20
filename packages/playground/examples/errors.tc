@@ -1,0 +1,16 @@
+// Error example: Syntax error
+let x = 5
+let y = * 10  // Missing operand
+
+// Error example: Type error (uncomment to test)
+// let str = "hello"
+// let num = 42
+// let result = str - num
+
+// Error example: Undefined variable
+print(undefinedVariable)
+
+// Error example: Infinite loop (uncomment to test)
+// while (true) {
+//   print("This will crash the browser")
+// }
