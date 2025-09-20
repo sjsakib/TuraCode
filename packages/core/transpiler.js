@@ -1,7 +1,7 @@
-const nearley = require('nearley');
-const grammar = require('./lang.js');
+import nearley from 'nearley';
+import grammar from './grammar.cjs';
 
-function parse(input) {
+export function parse(input) {
   try {
     const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
     parser.feed(input);
@@ -17,7 +17,7 @@ function parse(input) {
   }
 }
 
-function transpile(ast) {
+export function transpileAst(ast) {
   if (Array.isArray(ast)) {
     return ast.map(transpileStmt).join('\n');
   } else {
@@ -32,7 +32,9 @@ function transpileStmt(node) {
     case 'AssignStmt':
       return `${node.id} = ${transpileExpr(node.expr)};`;
     case 'IfStmt':
-      let res = `if ${transpileExpr(node.cond)} { ${node.then.map(transpileStmt).join('\n')} }`;
+      let res = `if ${transpileExpr(node.cond)} { ${node.then
+        .map(transpileStmt)
+        .join('\n')} }`;
       if (node.else) {
         res += ` else { ${node.else.map(transpileStmt).join('\n')} }`;
       }
@@ -41,7 +43,9 @@ function transpileStmt(node) {
       const init = transpileStmt(node.init);
       const cond = transpileExpr(node.cond);
       const step = transpileStmt(node.step).replace(/;$/, '');
-      return `for (${init} ${cond}; ${step}) { ${node.body.map(transpileStmt).join('\n')} }`;
+      return `for (${init} ${cond}; ${step}) { ${node.body
+        .map(transpileStmt)
+        .join('\n')} }`;
     case 'CallExpr':
       let callee = node.callee;
       if (callee !== 'dakao') {
@@ -51,7 +55,7 @@ function transpileStmt(node) {
       }
       return `${callee}(${node.args.map(transpileExpr).join(', ')});`;
     default:
-      throw new Error(`Unknown AST node type: ${node.type}`, {node});
+      throw new Error(`Unknown AST node type: ${node.type}`, { node });
   }
 }
 
@@ -69,5 +73,3 @@ function transpileExpr(node) {
       throw new Error(`Unknown expression type: ${node.type}`);
   }
 }
-
-module.exports = { transpile, parse };

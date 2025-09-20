@@ -1,16 +1,16 @@
 {
-  "name": "tura-code",
+  "name": "turacode",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "cli.js",
+  "description": "A toy programming language that transpiles to JavaScript.",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "moo": "^0.5.2",
-    "nearley": "^2.20.1"
-  }
+  "keywords": [],
+  "author": "sjsakib",
+  "license": "WTFPL",
+  "packageManager": "pnpm@10.17.0",
+  "workspaces": [
+    "packages/*"
+  ]
 }

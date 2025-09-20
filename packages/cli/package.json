@@ -1,0 +1,14 @@
+{
+  "name": "@turacode/cli",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "sample": "node index.js ../../sample.tc"
+  },
+  "description": "CLI to execute TuraCode files.",
+  "main": "index.js",
+  "license": "WTFPL",
+  "dependencies": {
+    "@turacode/core": "workspace:*"
+  }
+}

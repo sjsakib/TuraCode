@@ -1,7 +1,7 @@
 {
-  "name": "turacode",
+  "name": "@turacode/vs-code-extension",
   "displayName": "TuraCode",
-  "description": "Syntax hilighting for TuraCode",
+  "description": "Syntax highlighting for TuraCode",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.103.0"
