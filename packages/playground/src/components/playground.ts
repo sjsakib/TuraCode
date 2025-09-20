@@ -180,14 +180,6 @@ export class Playground {
     playgroundActions.startExecution(this.store);
     playgroundActions.clearOutput(this.store);
     
-    // Add an entry to show the run was started
-    const startEntry: OutputEntry = {
-      type: 'log',
-      content: 'Running code...',
-      timestamp: Date.now()
-    };
-    playgroundActions.addOutput(this.store, startEntry);
-    
     // Transpile the code
     const transpilationResult = transpile(sourceCode);
     
@@ -263,13 +255,6 @@ export class Playground {
         });
       });
     }
-    
-    // Add execution time information
-    outputEntries.push({
-      type: 'result' as const,
-      content: `Execution completed in ${executionResult.executionTime.toFixed(2)}ms`,
-      timestamp: Date.now()
-    });
     
     // Update store with results
     playgroundActions.finishExecution(this.store, outputEntries);

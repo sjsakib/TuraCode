@@ -20,7 +20,7 @@ const DEFAULT_EDITOR_SETTINGS: EditorSettings = {
  * Default initial state for the playground
  */
 const DEFAULT_INITIAL_STATE: PlaygroundState = {
-  sourceCode: '// Welcome to TuraCode Playground\n// Write your code here and click Run to execute it\n\nlet x = 5\nlet y = 10\ndakao(x + y)\n',
+  sourceCode: '// Welcome to TuraCode Playground\n// Write your code here and click Run to execute it\n\nata hola x = 5\nata hola y = 10\ndakao(x + y)\n',
   isExecuting: false,
   output: [],
   editorSettings: DEFAULT_EDITOR_SETTINGS,
