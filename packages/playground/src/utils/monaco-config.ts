@@ -20,13 +20,12 @@ const monarchLanguageConfig: monaco.languages.IMonarchLanguage = {
   defaultToken: 'invalid',
   
   keywords: [
-    'let', 'if', 'else', 'for', 'while', 'dakao'
+    'ata', 'hola', 'dakao', 'godi', 'na', 'holae', 'calay', 'gao'
   ],
   
   operators: [
-    '=', '>', '<', '!', '~', '?', ':', '==', '<=', '>=', '!=',
-    '&&', '||', '+', '-', '*', '/', '%', '++', '--', '+=',
-    '-=', '*=', '/=', '%='
+    '=', '>', '<', '!', '==', '<=', '>=', '!=',
+    '+', '-', '*', '/', '++', '--', '+=', '-=', '*=', '/='
   ],
   
   // we include these common regular expressions
